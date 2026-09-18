@@ -238,6 +238,22 @@ h1, h2, h3, h4 {
     background-color: #e0961e;
 }
 
+.nav-recruit-btn {
+    background-color: var(--accent-green);
+    color: #fff !important;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 700 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(136, 195, 74, 0.3);
+}
+
+.nav-recruit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(136, 195, 74, 0.4);
+    background-color: #74ac3a;
+}
+
 /* Hamburger Menu Icon */
 .menu-toggle {
     display: none;
@@ -343,6 +359,12 @@ h1, h2, h3, h4 {
     }
     
     .nav-contact-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .nav-recruit-btn {
         width: 100%;
         text-align: center;
         margin-top: 1rem;
