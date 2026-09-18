@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=company.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社案内へ移動します - 株式会社ミユキット</title>
+    <meta name="description" content="会社案内ページへ移動します。">
+    <link rel="canonical" href="company.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #fdfcf9;
+            color: #333333;
+        }
+
+        .redirect-card {
+            max-width: 560px;
+            padding: 2rem;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        a {
+            color: #f5a623;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-card">
+        <h1>会社案内ページへ移動します</h1>
+        <p>自動で移動しない場合は、<a href="company.html">こちら</a>をクリックしてください。</p>
+    </div>
+    <script>
+        window.location.replace('company.html');
+    </script>
+</body>
+</html>

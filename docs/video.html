@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>映像制作・コンテンツ - 株式会社ミユキット</title>
+    <meta name="description" content="株式会社ミユキットの映像制作・コンテンツ事業。誠実で親しみやすい映像制作からWEBへの組み込みまで、オフィスのITインフラを支える私たちだからできるトータルサポート。">
+    <!-- Font Awesome for friendly icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans JP & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .video-hero {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--bg-color);
+        }
+        .video-hero img.bg-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+            /* 밝고 친근한 이미지 유지 */
+            filter: brightness(0.85);
+        }
+        .video-hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 3rem 4rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-soft);
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            margin: 0 5vw;
+        }
+        .video-hero-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+        }
+        .video-hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-text);
+            font-weight: 500;
+        }
+
+        .packages-section {
+            padding: 8rem 0;
+        }
+        
+        .strength-section {
+            padding: 6rem 0;
+            background-color: var(--bg-light-gray);
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .strength-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: #fff;
+            padding: 4rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-soft);
+        }
+        .strength-icon {
+            font-size: 3rem;
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Clean, Friendly Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="miucuit_logo.png" alt="ミユキット ロゴ"></a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home<span class="en">HOME</span></a>
+                <a href="company.html">About<span class="en">企業について</span></a>
+                <a href="service.html">IT & Services<span class="en">システム・IT基盤</span></a>
+                
+                <div class="has-dropdown">
+                    <span class="nav-item-title" style="color: var(--accent-orange);">Creative<span class="en">コンテンツ制作</span></span>
+                    <div class="dropdown-menu">
+                        <a href="service.html#web">WEBサイト・グラフィック制作</a>
+                        <a href="video.html" style="color: var(--accent-orange);">成果の出る動画・映像制作</a>
+                        <a href="lp-video.html">映像制作パッケージ</a>
+                    </div>
+                </div>
+
+                <a href="products.html">Products<span class="en">取扱商品一覧</span></a>
+                <a href="store.html">Store<span class="en">実店舗（美幸商店）</span></a>
+                <a href="https://arwrk.net/recruit/dvzyrresnfl88wg/" target="_blank" rel="noopener noreferrer" class="nav-recruit-btn">中途採用</a>
+                <a href="index.html#contact" class="nav-contact-btn">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Bright, Friendly Hero Section for Video -->
+    <section class="video-hero">
+        <img class="bg-img" src="video_friendly_creator.png" alt="笑顔で動画編集を行う女性クリエイター">
+        <div class="video-hero-content fade-up">
+            <h1 class="video-hero-title"><span class="inline-block-text">「伝わる」映像を、</span><br><span class="inline-block-text">もっと身近に。</span></h1>
+            <p class="video-hero-subtitle">BtoBの誠実さと親しみやすさを両立した、成果につながる動画制作</p>
+        </div>
+    </section>
+
+    <!-- Miucuit Image MV Section (YouTube Embed) -->
+    <section class="mv-section" style="padding: 4rem 0; background-color: var(--bg-light-gray);">
+        <div class="container center fade-up delay-1">
+            <h2 class="section-title" style="margin-bottom: 2rem; font-size: 1.6rem;">ミユキット イメージMV</h2>
+            <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 900px; margin: 0 auto; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+                <iframe src="https://www.youtube.com/embed/uxdkYGGKTYE?rel=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--secondary-text); font-size: 0.95rem;">▲ ご依頼頂く映像の品質や私たちの想いをご覧ください</p>
+        </div>
+    </section>
+
+    <!-- Video Packages (Using the friendly card design from styles.css) -->
+    <section class="packages-section bg-color">
+        <div class="container">
+            <div class="section-header center fade-up">
+                <span class="section-tag">Video Packages</span>
+                <h2 class="section-title"><span class="inline-block-text">目的から選べる</span><span class="inline-block-text">3つの制作プラン</span></h2>
+                <p class="section-subtitle">企業が抱える多様な課題を、映像の力で分かりやすく解決します。</p>
+            </div>
+
+            <div class="services-grid grid-3">
+                <!-- Package 1 -->
+                <div class="service-card fade-up delay-1">
+                    <div class="service-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="service-title">採用力強化動画</h3>
+                    <p class="service-desc">
+                        「どんな人と働くのか」「どんな社風か」を求職者に等身大で伝えるストーリー重視の映像。企業の親しみやすさや誠実さを引き出し、ミスマッチのない採用活動を強力にサポートします。
+                    </p>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="service-card fade-up delay-2">
+                    <div class="service-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <h3 class="service-title">社内マニュアルDX動画</h3>
+                    <p class="service-desc">
+                        複雑な業務手順やシステムの操作方法を、誰が見ても分かる視覚的なマニュアルへ変換。教育コストの大幅な削減と、属人化の解消、業務効率化を実現します。
+                    </p>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="service-card fade-up delay-3">
+                    <div class="service-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="service-title">展示会・展示用動画</h3>
+                    <p class="service-desc">
+                        展示会やイベントで、通りがかる人の目を引きつけ、短い時間でサービスの特徴とメリットを伝えるインパクト重視のプロモーション動画。商談のきっかけを作ります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Strength (IT Integration) -->
+    <section class="strength-section">
+        <div class="container fade-up delay-2">
+            <div class="strength-container">
+                <i class="fa-solid fa-network-wired strength-icon"></i>
+                <h2 class="section-title" style="font-size: 1.8rem;"><span class="inline-block-text">映像を作るだけでは終わらない、</span><br><span class="inline-block-text">ITインフラのトータルサポート</span></h2>
+                <p class="about-desc" style="text-align: left;">
+                    私たち株式会社ミユキットは、神戸で長年オフィスのITインフラ・ネットワーク構築を支えてきました。ただ美しい綺麗な映像を納品して終わりではありません。<br><br>
+                    作成した動画を安全に社内で共有するための「セキュアな配信環境の構築」や、集客のための「コーポレートサイトやLPへの組み込み」まで、ITとWEBの専門知識を活かしてワンストップで伴走いたします。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container center">
+            <h2 class="footer-logo">MIUCUIT Co., Ltd.</h2>
+            <p class="footer-address">〒654-0028 兵庫県神戸市須磨区常盤町2丁目4-15</p>
+            <p class="footer-recruit" style="margin: 1.5rem 0;"><a href="https://arwrk.net/recruit/dvzyrresnfl88wg/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green); font-weight: 700; text-decoration: none;"><i class="fa-solid fa-arrow-right"></i> 中途採用情報はこちら</a></p>
+            <p class="copyright">&copy; 2026 Miucuit Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scrolltelling Logic -->
+    <script src="site.js"></script>
+</body>
+</html>
