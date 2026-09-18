@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本格的映像制作パッケージ - 株式会社ミユキット</title>
+    <meta name="description" content="映像は、消費するものではなく「会社の資産」になる。神戸で35年のITインフラ企業「ミユキット」が提案する、結果にコミットするプロフェッショナル映像制作。">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        /* =========================================================
+           Advanced Typography & Japanese Kerning
+           ========================================================= */
+        body, p, h1, h2, h3, h4, h5, h6, li, span, div {
+            word-break: auto-phrase;  /* Automatic phrase-based wrap on modern browsers */
+            font-feature-settings: "palt" 1; /* Proportional Alternate kerning for immaculate Japanese spacing */
+        }
+
+        /* =========================================================
+           Advanced LP Styles
+           ========================================================= */
+        :root {
+            --lp-hero-overlay: rgba(255, 255, 255, 0.85);
+            --lp-card-bg: #ffffff;
+            --lp-border: #e0e0e0;
+        }
+
+        /* ------------------ 1. Hero Section ------------------ */
+        .lp-hero-section {
+            position: relative;
+            width: 100%;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 120px 5vw 4rem;
+            /* offset for nav */
+            overflow: hidden;
+            background-color: var(--bg-color);
+        }
+
+        .lp-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .lp-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--lp-hero-overlay) 0%, rgba(255, 255, 255, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .lp-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .lp-hero-content {
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+
+            .lp-hero-overlay {
+                background: rgba(255, 255, 255, 0.85); /* Slightly more opaque for mobile text readability */
+            }
+        }
+
+        .lp-hero-catch {
+            font-size: clamp(1.8rem, 6vw, 3.5rem);
+            font-weight: 900;
+            color: var(--primary-text);
+            line-height: 1.35;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            word-break: auto-phrase;
+        }
+
+        .lp-hero-catch span.highlight {
+            color: var(--accent-orange);
+            background: linear-gradient(transparent 65%, rgba(245, 166, 35, 0.3) 65%);
+            display: inline-block;
+            padding: 0 0.2rem;
+        }
+
+        .lp-hero-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 500;
+            color: var(--secondary-text);
+            line-height: 1.8;
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 1rem;
+        }
+
+        /* ------------------ 2. Features Section ------------------ */
+        .features-section {
+            padding: 6rem 0;
+            background-color: var(--bg-light-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .features-image-wrapper {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            aspect-ratio: 16/9;
+        }
+
+        .features-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background: var(--lp-card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-text);
+        }
+
+        .feature-text p {
+            color: var(--secondary-text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ------------------ 3. Pricing Section (Cards) ------------------ */
+        .pricing-section {
+            padding: 6rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .pricing-cards-container {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pricing-card {
+            background: #fff;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-hover);
+            padding: 2.5rem 1.5rem;
+            position: relative;
+            border: 1px solid var(--lp-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card.bamboo-card {
+            background-color: #fffaf0;
+            border: 2px solid var(--accent-orange);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-card.bamboo-card {
+                transform: none;
+            }
+        }
+
+        .card-header {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-light-gray);
+        }
+        
+        .card-header.th-plum { color: var(--accent-green); }
+        .card-header.th-bamboo { color: var(--accent-orange); }
+        .card-header.th-pine { color: #d4a017; }
+
+        .card-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .card-price span {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .card-price.plum { color: var(--accent-green); }
+        .card-price.bamboo { color: var(--accent-orange); }
+        .card-price.pine { color: #d4a017; }
+
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-features li {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--bg-light-gray);
+            font-size: 0.95rem;
+            color: var(--primary-text);
+            text-align: center;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .card-features li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--secondary-text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-features small {
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+        }
+
+        .bamboo-badge {
+            background-color: var(--accent-orange);
+            color: #fff;
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(245, 166, 35, 0.3);
+        }
+
+        /* ------------------ Equipment Section ------------------ */
+        .equipment-section {
+            padding: 6rem 0;
+            background-color: var(--bg-light-gray);
+        }
+
+        .equipment-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .equipment-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .equipment-image-wrapper {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            aspect-ratio: 16/9;
+        }
+
+        .equipment-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .equipment-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .equipment-list li {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-soft);
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .equipment-list li h4 {
+            color: var(--accent-orange);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-list li p {
+            color: var(--primary-text);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        /* ------------------ 4. Works Section ------------------ */
+        .works-section {
+            padding: 6rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .works-grid-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .works-grid-bottom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+
+            .works-grid-top,
+            .works-grid-bottom {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            width: 100%;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            background: #e0e0e0;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            object-fit: cover;
+        }
+
+        .dummy-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--secondary-text);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* ------------------ 5. Company & CTA ------------------ */
+        .company-section {
+            padding: 6rem 0;
+            background-color: var(--bg-color);
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .company-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        table.company-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.company-table th,
+        table.company-table td {
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid var(--bg-light-gray);
+            text-align: left;
+        }
+
+        table.company-table th {
+            width: 35%;
+            color: var(--accent-orange);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        table.company-table td {
+            color: var(--primary-text);
+            font-weight: 500;
+        }
+
+        .map-wrapper {
+            position: relative;
+            padding-bottom: 75%;
+            height: 0;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .cta-bottom {
+            text-align: center;
+            margin-top: 5rem;
+            padding: 4rem 2rem;
+            background: var(--bg-light-gray);
+            border-radius: var(--border-radius-lg);
+            border: 2px dashed var(--accent-orange);
+        }
+
+        .cta-big-btn {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: #fff !important;
+            padding: 1.5rem 5rem;
+            font-size: 1.6rem;
+            font-weight: 900;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(245, 166, 35, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .cta-big-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(245, 166, 35, 0.6);
+        }
+
+        /* =========================================================
+           Print Optimization (PDF Layout) 
+           ========================================================= */
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000;
+                font-size: 10pt;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Hide Web-only Elements */
+            .navbar,
+            .site-footer,
+            .menu-toggle,
+            .cta-big-btn,
+            .cta-secondary-text,
+            .works-section,
+            .lp-hero-overlay {
+                display: none !important;
+            }
+
+            /* Prevent Page Break Issues */
+            .pricing-table-wrapper,
+            .feature-item,
+            table.company-table,
+            .lp-hero-content,
+            .map-wrapper {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            /* Reset Containers */
+            .container {
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+
+            section {
+                padding: 1.5rem 0 !important;
+                background: transparent !important;
+            }
+
+            /* Hero Optimization for Print */
+            .lp-hero-section {
+                min-height: auto;
+                padding: 0 !important;
+                justify-content: flex-start;
+            }
+
+            .lp-hero-bg {
+                position: relative;
+                height: 300px;
+                border-radius: 12px;
+                margin-bottom: 2rem;
+            }
+
+            .lp-hero-content {
+                box-shadow: none !important;
+                padding: 0;
+                max-width: 100%;
+                background: transparent !important;
+                border-radius: 0;
+            }
+
+            .lp-hero-catch {
+                font-size: 24pt;
+                margin-bottom: 1rem;
+            }
+
+            .lp-hero-sub {
+                font-size: 14pt;
+                border-left: 3px solid var(--accent-orange);
+                padding-left: 1rem;
+            }
+
+            /* Features Grid */
+            .features-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .features-image-wrapper {
+                height: 250px;
+                width: 100%;
+                aspect-ratio: auto;
+            }
+
+            .feature-item {
+                padding: 1rem;
+                border: 1px solid #ddd;
+                box-shadow: none !important;
+            }
+
+            /* Pricing Cards Print */
+            .pricing-cards-container {
+                display: flex !important;
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+            .pricing-card {
+                flex: 1;
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                padding: 1rem;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .pricing-card.bamboo-card {
+                transform: none !important;
+                border: 2px solid var(--accent-orange);
+            }
+
+            .bamboo-badge {
+                box-shadow: none !important;
+                border-radius: 4px;
+            }
+
+            .card-features li {
+                padding: 0.5rem 0;
+            }
+
+            .card-price {
+                font-size: 18pt;
+                margin: 0.5rem 0;
+            }
+
+            /* Equipment Layout Print */
+            .equipment-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .equipment-image-wrapper {
+                height: 250px;
+                width: 100%;
+                aspect-ratio: auto;
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+            }
+
+            .equipment-list li {
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                border-left: 4px solid var(--accent-orange) !important;
+                padding: 1rem;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .equipment-section {
+                background: transparent !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 1rem;
+                padding: 1rem 0 !important;
+            }
+
+            .ai-section {
+                background: transparent !important;
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-top: 1rem;
+                padding: 1rem 0 !important;
+            }
+
+            .ai-grid {
+                display: flex !important;
+                flex-direction: column;
+                gap: 1rem !important;
+            }
+
+            .ai-video-wrapper {
+                display: none !important;
+            }
+
+            /* Company Grid */
+            .company-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .map-wrapper {
+                height: 200px;
+                padding-bottom: 0;
+                border: 1px solid #ddd;
+                box-shadow: none !important;
+            }
+
+            /* CTA Replacement */
+            .cta-bottom {
+                background: none !important;
+                border: 2px solid var(--accent-orange) !important;
+                padding: 1rem;
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            .print-qr-section {
+                display: block !important;
+                margin-top: 1rem;
+            }
+
+            @page {
+                margin: 15mm;
+                size: A4 portrait;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER_BLOCK -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="miucuit_logo.png" alt="ミユキット ロゴ"></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home<span class="en">HOME</span></a>
+                <a href="company.html">About<span class="en">企業について</span></a>
+                <a href="service.html">IT & Services<span class="en">システム・IT基盤</span></a>
+                <div class="has-dropdown">
+                    <span class="nav-item-title">Creative<span class="en">コンテンツ制作</span></span>
+                    <div class="dropdown-menu">
+                        <a href="service.html#web">WEBサイト・グラフィック制作</a>
+                        <a href="video.html">成果の出る動画・映像制作</a>
+                        <a href="lp-video.html">映像制作パッケージ</a>
+                    </div>
+                </div>
+                <a href="products.html">Products<span class="en">取扱商品一覧</span></a>
+                <a href="store.html">Store<span class="en">実店舗（美幸商店）</span></a>
+                <a href="#contact" class="nav-contact-btn">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO_BLOCK -->
+    <section class="lp-hero-section">
+        <img class="lp-hero-bg" src="lp_hero_image.png" alt="動画編集を行うクリエイター">
+        <div class="lp-hero-overlay"></div>
+        <div class="container" style="z-index: 2;">
+            <div class="lp-hero-content fade-up">
+                <h1 class="lp-hero-catch">
+                    <span style="display: inline-block; max-width: 100%;">映像は、</span><span style="display: inline-block; max-width: 100%;">消費するものではなく</span><br>
+                    <span style="display: inline-block; max-width: 100%;"><span class="highlight">『会社の資産』</span>になる。</span>
+                </h1>
+                <p class="lp-hero-sub">神戸で35年、オフィスのITインフラを支えてきたミユキットが提案する、結果にコミットするプロフェッショナル映像制作。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES_BLOCK -->
+    <section class="features-section">
+        <div class="container fade-up">
+
+
+            <div class="features-grid">
+                <!-- Visual Left -->
+                <div class="features-image-wrapper fade-up delay-1">
+                    <img src="lp_equipment_image.png" alt="シネマカメラとプロフェッショナル機材">
+                </div>
+
+                <!-- 4 Reasons Right -->
+                <div class="features-list">
+                    <div class="feature-item fade-up delay-1">
+                        <div class="feature-icon"><i class="fa-solid fa-yen-sign"></i></div>
+                        <div class="feature-text">
+                            <h3>圧倒的なコストパフォーマンス</h3>
+                            <p>一般的な相場30万〜50万円のところ、内製化と徹底した効率化によりローコストで高品質な映像を実現します。無駄な中間マージンをカットし、お客様の予算を最大限に活かします。</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item fade-up delay-2">
+                        <div class="feature-icon"><i class="fa-solid fa-video"></i></div>
+                        <div class="feature-text">
+                            <h3>プロフェッショナル機材の導入</h3>
+                            <p>シネマカメラ「SONY FX3」をはじめとする最新の撮影機材を使用。企業の魅力を映画のような美しく洗練された映像で切り取り、視聴者の心を強くインスパイアします。</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item fade-up delay-3">
+                        <div class="feature-icon"><i class="fa-solid fa-server"></i></div>
+                        <div class="feature-text">
+                            <h3>ITインフラとのシームレス連携</h3>
+                            <p>映像を作って終わりではありません。社内ネットワークでの安全な動画配信や、WEBサイトへの組み込み、デジタルサイネージの運用まで、IT企業ならではのワンストップサポートを提供します。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item fade-up delay-4">
+                        <div class="feature-icon"><i class="fa-solid fa-building-shield"></i></div>
+                        <div class="feature-text">
+                            <h3>自治体対応の信頼性</h3>
+                            <p>市役所などの行政案件も手がける、実績豊富なスタッフがサポートいたします！機密情報の取り扱いやセキュリティ対策も万全ですので、初めての映像制作でも安心してお任せください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING_BLOCK -->
+    <section class="pricing-section">
+        <div class="container fade-up">
+            <div class="center">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">制作プラン（比較表）</h2>
+                <p class="section-subtitle">ご予算や目的に合わせた3つのパッケージをご用意しています。</p>
+            </div>
+
+            <div class="pricing-cards-container fade-up delay-1">
+                <!-- 梅プラン -->
+                <div class="pricing-card">
+                    <div class="card-header th-plum">【梅】プラン</div>
+                    <div class="card-price plum">¥50,000<span>〜</span></div>
+                    <ul class="card-features">
+                        <li><span class="feature-label">素材の準備・撮影</span>お客様からの完全素材支給<br><small>（撮影なし）</small></li>
+                        <li><span class="feature-label">映像尺</span>応相談<br><small>（ヒアリングにより柔軟に決定）</small></li>
+                        <li><span class="feature-label">修正対応</span>1回まで</li>
+                        <li><span class="feature-label">おすすめの用途</span>お客様からの素材を活かす<br>SNSショート動画など</li>
+                    </ul>
+                </div>
+
+                <!-- 竹プラン -->
+                <div class="pricing-card bamboo-card">
+                    <div class="bamboo-badge">人気 No.1</div>
+                    <div class="card-header th-bamboo">【竹】プラン</div>
+                    <div class="card-price bamboo">¥150,000<span>〜</span></div>
+                    <ul class="card-features">
+                        <li><span class="feature-label">素材の準備・撮影</span>応相談<br><small>（支給素材の活用、または新規撮影）</small></li>
+                        <li><span class="feature-label">映像尺</span>応相談<br><small>（ヒアリングにより柔軟に決定）</small></li>
+                        <li><span class="feature-label">修正対応</span>2回まで</li>
+                        <li><span class="feature-label">おすすめの用途</span>会社案内・採用動画<br>サービス紹介動画</li>
+                    </ul>
+                </div>
+
+                <!-- 松プラン -->
+                <div class="pricing-card">
+                    <div class="card-header th-pine">【松】プラン</div>
+                    <div class="card-price pine">¥300,000<span>〜</span></div>
+                    <ul class="card-features">
+                        <li><span class="feature-label">素材の準備・撮影</span>応相談<br><small>（企画から本格的な複数日撮影まで柔軟に対応）</small></li>
+                        <li><span class="feature-label">映像尺</span>応相談<br><small>（ヒアリングにより柔軟に決定）</small></li>
+                        <li><span class="feature-label">修正対応</span>柔軟に対応</li>
+                        <li><span class="feature-label">おすすめの用途</span>高品質なブランディング映像<br>企業ステートメント動画</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-notes fade-up delay-2"
+                style="margin-top: 1.5rem; display: flex; justify-content: flex-end; font-size: 0.9rem; color: var(--secondary-text); line-height: 1.6;">
+                <p style="margin: 0; text-align: left; text-indent: -1em; padding-left: 1em; max-width: 100%;">
+                    ※カメラマン派遣を伴う新規撮影の場合、対応エリアに応じて別途「交通費・出張経費」が発生する場合がございます。素材支給のみで完結する場合は不要です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPMENT_BLOCK -->
+    <section class="equipment-section">
+        <div class="container fade-up">
+            <div class="center" style="margin-bottom: 3rem;">
+                <span class="section-tag">Equipment</span>
+                <h2 class="section-title">最新のプロフェッショナル機材を自社保有</h2>
+                <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">
+                    最高峰のシネマカメラ『SONY FX3』をはじめとするプロフェッショナル機材を自社完備。案件の規模や目的に合わせて最適な機材をセレクトします。
+                </p>
+            </div>
+
+            <div class="equipment-layout">
+                <div class="equipment-image-wrapper fade-up delay-1">
+                    <img src="lp_equipment_detailed_image.png" alt="SONY FX3 シネマカメラ オフィスデスク">
+                </div>
+                <div class="equipment-list-wrapper fade-up delay-2">
+                    <ul class="equipment-list">
+                        <li>
+                            <h4>【Camera】</h4>
+                            <p>SONY Cinema Line FX3 / SONY α7 IV ILCE-7M4 / Action Camera 等</p>
+                        </li>
+                        <li>
+                            <h4>【Lens】</h4>
+                            <p>SONY G Masterレンズ各種</p>
+                        </li>
+                        <li>
+                            <h4>【Gimbal & Audio】</h4>
+                            <p>DJI RS2 (スタビライザー)<br>RODE ワイヤレスマイクシステム 等</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI_ANIMATION_BLOCK -->
+    <section class="ai-section" style="padding: 6rem 0; background-color: #fff;">
+        <div class="container fade-up">
+            <div class="ai-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="ai-text">
+                    <span class="section-tag">AI & Original Music</span>
+                    <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem;">
+                        ゼロからイチを創り出す。<br>AIアニメーション＆オリジナル楽曲制作</h2>
+                    <p style="color: var(--secondary-text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem;">
+                        BtoG（自治体）案件も手がける実績豊富なスタッフが、実写映像だけでなく、AIを活用したフルオリジナルアニメーションの制作も行います。さらに、映像に合わせたオリジナル楽曲の作曲・編曲まで自社で対応。ゼロからイチを創り出す、他にはないクリエイティブを提供します。
+                    </p>
+                    <p style="font-size: 0.95rem; color: var(--accent-orange); font-weight: 700;">
+                        ※フルオリジナルアニメーションおよび楽曲制作の料金は『応相談』となります。
+                    </p>
+                </div>
+                <!-- YouTube Video iframe -->
+                <div class="ai-video-wrapper"
+                    style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: var(--border-radius-lg); overflow: hidden; box-shadow: var(--shadow-hover); background: #e0e0e0;">
+                    <iframe src="https://www.youtube.com/embed/tx9tVbUd2VI"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKS_BLOCK -->
+    <section class="works-section">
+        <div class="container fade-up">
+            <div class="center" style="margin-bottom: 3rem;">
+                <span class="section-tag">Works & Samples</span>
+                <h2 class="section-title">制作実績・サンプル</h2>
+                <p class="section-subtitle">ミユキットが手がけた映像の一部をご紹介します。</p>
+            </div>
+
+            <!-- YouTube Video Grid -->
+            <div class="works-grid-top fade-up delay-1">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/uxdkYGGKTYE" title="YouTube video 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/0QyTETLB9u0" title="YouTube video 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+
+            <!-- Future Video Placeholders (Dummy Images) -->
+            <div class="works-grid-bottom fade-up delay-2">
+                <div class="video-wrapper">
+                    <!-- Placeholder 1 -->
+                    <div class="dummy-overlay">Coming Soon</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMPANY_CTA_BLOCK -->
+    <section class="company-section">
+        <div class="container fade-up">
+            <div class="company-grid">
+                <div>
+                    <div style="margin-bottom: 2rem;">
+                        <span class="section-tag">Company & Access</span>
+                        <h2 class="section-title">会社概要</h2>
+                    </div>
+                    <table class="company-table">
+                        <tr>
+                            <th>【社名】</th>
+                            <td>株式会社 ミユキット</td>
+                        </tr>
+                        <tr>
+                            <th>【所在地】</th>
+                            <td>〒654-0028<br>兵庫県神戸市須磨区常盤町2丁目4-15</td>
+                        </tr>
+                        <tr>
+                            <th>【TEL】</th>
+                            <td>078-733-5369</td>
+                        </tr>
+                        <tr>
+                            <th>【アクセス】</th>
+                            <td>JR/地下鉄 新長田駅より西に徒歩8分</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Google Map Embedded -->
+                <div class="map-wrapper fade-up delay-1">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13127.897271486914!2d135.12912136046774!3d34.65535151787824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008577430a458f%3A0x5d86d3848db6d087!2z5qCq5byP5Lya56S-44Of44Om44Kt44OD44OI!5e0!3m2!1sja!2sjp!4v1783089268512!5m2!1sja!2sjp"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-bottom fade-up delay-2" id="contact">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-text);">まずはお気軽にご相談ください</h3>
+                <p style="color: var(--secondary-text); margin-bottom: 2rem; font-size: 1.1rem;">
+                    映像制作のプラン選びから、構成のご提案、撮影スケジュールまで丁寧にご案内します。<br>ご相談・お見積りは無料です。
+                </p>
+
+                <!-- Web View Button -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBUF_x7FRnB7XwBfrR20cNsoDoXwKZ3oxbDqsAhNZ2FjdCyg/viewform?usp=publish-editor"
+                    class="cta-big-btn">まずは無料で相談する</a>
+                <p class="cta-secondary-text"
+                    style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--secondary-text);">メールでの直接のお問い合わせはこちら： <a
+                        href="mailto:info@miucuit.jp"
+                        style="color: var(--accent-orange); font-weight: 500;">info@miucuit.jp</a></p>
+
+                <!-- Print View QR -->
+                <div class="print-qr-section" style="display: none;">
+                    <p style="font-weight: bold; font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent-orange);">
+                        詳しい実績・無料相談はこちらから！</p>
+                    <img src="./qr-code.png" alt="Webサイトへ"
+                        style="width: 100px; height: auto; margin: 0 auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER_BLOCK -->
+    <footer class="site-footer">
+        <div class="container center">
+            <h2 class="footer-logo">MIUCUIT Co., Ltd.</h2>
+            <p class="footer-address">〒654-0028 兵庫県神戸市須磨区常盤町2丁目4-15</p>
+            <p class="copyright">&copy; 2026 Miucuit Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- RESPONSIVE_LOGIC -->
+    <script src="site.js"></script>
+</body>
+
+</html>

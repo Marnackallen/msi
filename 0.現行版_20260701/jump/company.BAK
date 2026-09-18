@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社案内 - 株式会社ミユキット</title>
+    <meta name="description" content="株式会社ミユキットの会社案内。所在地、アクセス情報、会社情報を掲載しています。">
+    <!-- Font Awesome for friendly icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans JP & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* PDF Brochure Style A4 Layout */
+        .brochure-wrapper {
+            background-color: var(--bg-light-gray); /* Outer background to contrast with white paper */
+            padding: 10rem 0 6rem;
+        }
+
+        .brochure-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff; /* Clean white paper base */
+            padding: 5rem 4rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06); /* Soft paper shadow */
+            border-radius: 4px; /* Crisp edges */
+            color: #333333; /* Dark gray for maximum readability without being pure black */
+            line-height: 2.2; /* Wide line-height for readability */
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        
+        .brochure-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            border-bottom: 2px solid var(--accent-orange);
+            padding-bottom: 2rem;
+        }
+        
+        .brochure-title {
+            font-size: 2.2rem;
+            color: var(--primary-text);
+            margin-bottom: 0.5rem;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        .brochure-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+        
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.05rem;
+            margin-bottom: 4rem;
+        }
+        
+        .company-table th, .company-table td {
+            padding: 1.8rem 1rem;
+            border-bottom: 1px solid #eeeeee;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        .company-table th {
+            width: 30%;
+            font-weight: 700;
+            color: var(--primary-text);
+        }
+
+        .map-section-title {
+            font-size: 1.4rem;
+            color: var(--primary-text);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            border-left: 4px solid var(--accent-green);
+            padding-left: 1rem;
+        }
+
+        .map-container {
+            width: 100%;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .brochure-wrapper {
+                padding: 6rem 0 2rem;
+                background-color: #ffffff;
+            }
+            .brochure-container {
+                padding: 2rem 5vw;
+                box-shadow: none; /* simpler on mobile */
+                border-radius: 0;
+            }
+            .company-table th, .company-table td {
+                display: block;
+                width: 100%;
+            }
+            .company-table th {
+                padding-bottom: 0.5rem;
+                border-bottom: none;
+            }
+            .company-table td {
+                padding-top: 0;
+                padding-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Clean, Friendly Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="miucuit_logo.png" alt="ミユキット ロゴ"></a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home<span class="en">HOME</span></a>
+                <a href="company.html" style="color: var(--accent-orange);">About<span class="en">企業について</span></a>
+                <a href="service.html">IT & Services<span class="en">システム・IT基盤</span></a>
+                
+                <div class="has-dropdown">
+                    <span class="nav-item-title">Creative<span class="en">コンテンツ制作</span></span>
+                    <div class="dropdown-menu">
+                        <a href="service.html#web">WEBサイト・グラフィック制作</a>
+                        <a href="video.html">成果の出る動画・映像制作</a>
+                        <a href="lp-video.html">映像制作パッケージ</a>
+                    </div>
+                </div>
+
+                <a href="products.html">Products<span class="en">取扱商品一覧</span></a>
+                <a href="store.html">Store<span class="en">実店舗（美幸商店）</span></a>
+                <a href="index.html#contact" class="nav-contact-btn">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="brochure-wrapper">
+        <div class="brochure-container fade-up">
+            
+            <div class="brochure-header">
+                <h1 class="brochure-title"><span class="inline-block-text">会社案内</span></h1>
+                <p class="brochure-subtitle">COMPANY PROFILE</p>
+            </div>
+
+            <div class="brochure-content">
+                <h2 style="font-size: 1.8rem; text-align: center; margin-bottom: 1rem; color: var(--primary-text); letter-spacing: 0.1em;">CONCEPT</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 4rem; word-break: keep-all; overflow-wrap: break-word;">須磨で創業して35年、ミユキットは地元企業の皆様に支えられながら成長してきました。</p>
+
+                <h3 style="font-size: 1.4rem; border-left: 4px solid var(--bg-light-gray); padding-left: 1rem; margin-bottom: 1.5rem; color: var(--primary-text);">ミユキットの歴史と変遷</h3>
+                <p style="margin-bottom: 2rem;">
+                    ミユキットは地域に根ざした文具店「美幸商店」として1982年に創業しました。<br>
+                    企業様向けのオフィスサポートを主軸にしてきましたが、ネットワークによる情報伝達の発展で商品や技術を販売する仕組みが大きく変化し、ただの販売だけではお客様のサポートは難しくなったため時代の流れに即した形に進化する必要がありました。<br>
+                    この情報社会で小売業が成長を続けるためには、極小分野の開拓や商品に付随するサービスのご提案など、「待ち」の態勢で販売していた商売からお客様の業務そのものの価値や品質を向上させる活きた技術を「ご提案」していく販売体制が重要であると考えました。
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    そこで弊社は2006年に、取扱商品の方向性を「メモとボールペン」から「パソコンとネットワーク」に拡大し、オフィス環境向上に対するサポート体制を整えました。<br>
+                    これにより、日々の業務で消耗する文具や各種印刷物に加え、パソコンやソフトウェアの販売提供、紙媒体のデジタル化および知財の共有、ネットワークインフラの整備など、オフィス環境のトータルサポートが可能になりました。
+                </p>
+                <p style="margin-bottom: 4rem;">
+                    2018年に美幸商店はミユキットに社名変更を行い、美幸商店の名称は店舗名として継続、文具店としての役割とともに、新しくミユキットとして働く人すべてにそのサービスを提供する会社となりました。
+                </p>
+
+                <h3 style="font-size: 1.4rem; border-left: 4px solid var(--bg-light-gray); padding-left: 1rem; margin-bottom: 1.5rem; color: var(--primary-text);">縁の下の力持ちとして</h3>
+                <p style="margin-bottom: 4rem;">
+                    お客様の今までを、文具店という縁の下の力持ちとして支えてきたミユキットだからこそできる オフィスのIT化を皆様にご提供して参ります。<br>
+                    「古くても新しい」35年間オフィスでの仕事を支えてきたからこそできるトータルソリューションの提供を、最新・最善のご提案とともに、お客様の会社環境のすべてを準備できる文具店。今までの文具店の常識を覆すようなそんな企業でありたいと考えます。<br>
+                    是非、文具店だからこそできるオフィスの改善をご活用ください。
+                </p>
+                
+                <h2 class="map-section-title" style="border-left-color: var(--accent-orange); margin-top: 5rem;"><span class="inline-block-text">会社情報</span></h2>
+            </div>
+            
+            <table class="company-table">
+                <tbody>
+                    <tr>
+                        <th>社名</th>
+                        <td>株式会社 ミユキット</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>〒654-0028<br>兵庫県神戸市須磨区常盤町2丁目4-15</td>
+                    </tr>
+                    <tr>
+                        <th>TEL</th>
+                        <td>078-733-5369</td>
+                    </tr>
+                    <tr>
+                        <th>FAX</th>
+                        <td>078-731-7434</td>
+                    </tr>
+                    <tr>
+                        <th>E-mail</th>
+                        <td>info@miucuit.jp</td>
+                    </tr>
+                    <tr>
+                        <th>店舗</th>
+                        <td>美幸商店(弊社ビル1Fにて営業中)</td>
+                    </tr>
+                    <tr>
+                        <th>C.Lab</th>
+                        <td>〒651-0085<br>神戸市中央区八幡通4-1-14 B&Lビルディング3F</td>
+                    </tr>
+                    <tr>
+                        <th>営業時間</th>
+                        <td>9：00〜17：30</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="map-section-title"><span class="inline-block-text">アクセス</span></h2>
+            <!-- Google Map Embedding (Responsive iframe) -->
+            <div class="map-container fade-up delay-1">
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=兵庫県神戸市須磨区常盤町2丁目4-15&t=&z=16&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p style="margin-top: 1rem; color: var(--secondary-text); font-size: 0.95rem; line-height: 1.6;">
+                <strong>※最寄り駅</strong><br>
+                JR/地下鉄 新長田駅より西に徒歩8分・JR 鷹取駅より東に徒歩8分・山陽/地下鉄 板宿駅より南に徒歩10分
+            </p>
+
+            <!-- Newly created image will be inserted here as a decorative asset for the brochure -->
+            <div class="fade-up delay-2" style="margin-top: 4rem;">
+                <img src="modern_friendly_office_1_1773296498504.png" id="brochure-image" alt="和やかに働くスタッフの様子" style="width: 100%; border-radius: var(--border-radius-sm); box-shadow: var(--shadow-soft);">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container center">
+            <h2 class="footer-logo">MIUCUIT Co., Ltd.</h2>
+            <p class="footer-address">〒654-0028 兵庫県神戸市須磨区常盤町2丁目4-15</p>
+            
+            <div class="footer-socials" style="margin: 2rem 0;">
+                <a href="https://www.instagram.com/miucuitjp/?hl=ja" target="_blank" rel="noopener noreferrer" style="color: var(--primary-text); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/miucuitjp" target="_blank" rel="noopener noreferrer" style="color: var(--primary-text); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" style="fill: currentColor; vertical-align: -0.125em;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                </a>
+                <a href="https://ja-jp.facebook.com/miucuitjp/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-text); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s;"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+
+            <p class="copyright">&copy; 2026 Miucuit Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Responsive Navigation Logic -->
+    <script src="site.js"></script>
+</body>
+</html>

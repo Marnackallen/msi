@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事業内容 - 株式会社ミユキット</title>
+    <meta name="description" content="株式会社ミユキットの事業内容紹介。ITソリューション、コンテンツ制作、OA機器・オフィス什器、そして実店舗「美幸商店」の4本柱でオフィスの課題を解決します。">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .subpage-header {
+            padding: 12rem 0 6rem;
+            background-color: var(--bg-light-gray);
+            text-align: center;
+        }
+        .service-detail-section {
+            padding: 6rem 0;
+            border-bottom: 1px solid var(--bg-light-gray);
+        }
+        .service-detail-section:last-of-type {
+            border-bottom: none;
+        }
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .service-detail-grid.reverse .detail-text {
+            order: 2;
+        }
+        .service-detail-grid.reverse .detail-image {
+            order: 1;
+        }
+        .detail-image img {
+            width: 100%;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-soft);
+        }
+        .detail-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .detail-desc {
+            color: var(--secondary-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .detail-list {
+            list-style: none;
+            padding: 0;
+        }
+        .detail-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-text);
+        }
+        .detail-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-green);
+        }
+        @media (max-width: 900px) {
+            .service-detail-grid, .service-detail-grid.reverse {
+                grid-template-columns: 1fr;
+            }
+            .service-detail-grid.reverse .detail-text { order: 1; }
+            .service-detail-grid.reverse .detail-image { order: 2; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="miucuit_logo.png" alt="ミユキット ロゴ"></a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home<span class="en">HOME</span></a>
+                <a href="company.html">About<span class="en">企業について</span></a>
+                <a href="service.html" style="color: var(--accent-orange);">IT & Services<span class="en">システム・IT基盤</span></a>
+                
+                <div class="has-dropdown">
+                    <span class="nav-item-title">Creative<span class="en">コンテンツ制作</span></span>
+                    <div class="dropdown-menu">
+                        <a href="service.html#web">WEBサイト・グラフィック制作</a>
+                        <a href="video.html">成果の出る動画・映像制作</a>
+                        <a href="lp-video.html">映像制作パッケージ</a>
+                    </div>
+                </div>
+
+                <a href="products.html">Products<span class="en">取扱商品一覧</span></a>
+                <a href="store.html">Store<span class="en">実店舗（美幸商店）</span></a>
+                <a href="index.html#contact" class="nav-contact-btn">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="subpage-header">
+        <div class="container fade-up">
+            <span class="section-tag">Our Services</span>
+            <h1 class="section-title">事業内容</h1>
+            <p class="section-subtitle">「文具×IT」 鉛筆1本から、複雑なシステム導入まで。</p>
+        </div>
+    </div>
+
+    <!-- Service 1: Office Supplies (Using Generated Image) -->
+    <section class="service-detail-section" id="furniture">
+        <div class="container fade-up">
+            <div class="service-detail-grid">
+                <div class="detail-text">
+                    <h2 class="detail-title"><span class="inline-block-text">事務用品・</span><span class="inline-block-text">オフィス家具</span></h2>
+                    <p class="detail-desc">
+                        1982年創業の文具店としての顔。アスクル正規取扱店として、神戸市内の法人様を中心にスピーディーな配送を行っています。パステルカラーの可愛い文具から最新のデジタル機器まで、オフィスに必要なあらゆるアイテムが揃います。
+                    </p>
+                    <ul class="detail-list">
+                        <li>アスクル（ASKUL）正規取扱代理店</li>
+                        <li>各種メーカーの事務用品、文房具、消耗品の販売</li>
+                        <li>オフィス家具（デスク・チェア・パーティション等）の販売とレイアウト提案</li>
+                        <li>神戸市（須磨区・長田区・兵庫区）への自社スタッフによる迅速配達</li>
+                        <li>店頭（美幸商店）でのコピー、パウチ（ラミネート）加工サービス</li>
+                        <li>地域限定アイテム（近隣学校指定のネームシール作成など）</li>
+                    </ul>
+                </div>
+                <div class="detail-image">
+                    <img src="office_supplies_bg.png" alt="パステルカラーの文具と最新IT機器が調和したデスク">
+                </div>
+            </div>
+
+            <!-- Office Supplies Pricing Cards -->
+            <div class="services-grid grid-2" style="margin-top: 5rem;">
+                <!-- Card 1 -->
+                <div class="service-card fade-up delay-1">
+                    <div class="service-icon" style="color: var(--accent-orange);"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3 class="service-title">アスクル正規取扱販売店</h3>
+                    <p class="service-desc" style="margin-bottom: 2rem;">
+                        会社で使う事務用品から飲料まで簡単注文、翌日お届け、月１回のお支払い、ポイントも貯まります。
+                    </p>
+                    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--bg-light-gray);">
+                        <span style="display: block; font-size: 1.2rem; color: var(--accent-orange); font-weight: 700;">¥1,000以上のご注文で配達無料</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card fade-up delay-2">
+                    <div class="service-icon" style="color: var(--accent-orange);"><i class="fa-solid fa-building"></i></div>
+                    <h3 class="service-title">オフィス設計</h3>
+                    <p class="service-desc" style="margin-bottom: 2rem;">
+                        新規開業や移転、レイアウト変更の際、お客様の要望と効率を考えたオフィス設計を承ります。
+                    </p>
+                    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--bg-light-gray);">
+                        <span style="font-size: 1rem; font-weight: 700; color: var(--secondary-text); margin-right: 0.5rem;">デザイン設計料</span>
+                        <span style="font-size: 1.8rem; color: var(--accent-orange); font-weight: 700;">¥40,000〜</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service 2: IT Solutions -->
+    <section class="service-detail-section bg-light-gray">
+        <div class="container fade-up delay-1">
+            <div class="service-detail-grid reverse">
+                <div class="detail-text">
+                    <h2 class="detail-title"><span class="inline-block-text">IT・ネットワーク</span><span class="inline-block-text">ソリューション</span></h2>
+                    <p class="detail-desc">
+                        「パソコンが動かない」「ネットが遅い」といった日常のトラブル解決から、企業におけるセキュアなネットワーク環境の構築まで、法人のITインフラを総合的に支えます。
+                    </p>
+                    <ul class="detail-list">
+                        <li>社内ネットワーク環境（有線LAN/Wi-Fi/VPN）の設計・構築・保守</li>
+                        <li>UTM（統合脅威管理）やアンチウイルスソフト等によるセキュリティ対策導入</li>
+                        <li>Microsoft 365などクラウドサービス（SaaS）の導入支援・運用サポート・バックアップ環境構築</li>
+                        <li>AccessやFileMakerによる顧客管理・受発注管理のオリジナルデータベース開発（50万円〜）</li>
+                        <li>OA機器（プリンター・複合機・PC周辺機器等）の販売および初期設定</li>
+                        <li>「PCが起動しない」「ネットが繋がらない」等の日常的なパソコントラブル駆けつけサポート</li>
+                    </ul>
+                </div>
+                <div class="detail-image">
+                    <!-- Placeholder using friendly office bg -->
+                    <img src="friendly_office_bg.png" alt="ITサポートを行う和やかなオフィス風景">
+                </div>
+            </div>
+
+            <!-- IT Services Pricing Cards -->
+            <div class="services-grid grid-3" style="margin-top: 5rem;">
+                <!-- Card 1 -->
+                <div class="service-card fade-up delay-1">
+                    <div class="service-icon" style="color: var(--accent-green);"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="service-title">システム開発</h3>
+                    <p class="service-desc" style="margin-bottom: 2rem;">
+                        受発注管理や独自のデータベースなどお客様独自のシステムが必要な場合はご相談ください。<br>アフターサポートまで一括して請負いたします。
+                    </p>
+                    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--bg-light-gray);">
+                        <span style="display: block; font-size: 1.8rem; color: var(--accent-orange); font-weight: 700;">¥500,000〜</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card fade-up delay-2">
+                    <div class="service-icon" style="color: var(--accent-green);"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="service-title">セキュリティ/UTM</h3>
+                    <p class="service-desc" style="margin-bottom: 2rem;">
+                        セキュリティ対策は企業として必須になっています。<br>何をどうすればいいかわからないという場合でも最適なものをご提案させていただきます。
+                    </p>
+                    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--bg-light-gray);">
+                        <span style="display: block; font-size: 1.8rem; color: var(--accent-orange); font-weight: 700;">¥300,000〜</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card fade-up delay-3">
+                    <div class="service-icon" style="color: var(--accent-green);"><i class="fa-solid fa-server"></i></div>
+                    <h3 class="service-title">保守・サポート</h3>
+                    <p class="service-desc" style="margin-bottom: 2rem;">
+                        サーバー保守、ネットワーク保守対応も承っております。<br>急な障害やトラブルから会社のシステムを守ります。
+                    </p>
+                    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--bg-light-gray);">
+                        <span style="font-size: 1rem; font-weight: 700; color: var(--secondary-text); margin-right: 0.5rem;">月額</span>
+                        <span style="font-size: 1.8rem; color: var(--accent-orange); font-weight: 700;">¥30,000〜</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Service 3: Content Production -->
+    <section class="service-detail-section" id="web">
+        <div class="container fade-up delay-2">
+            <div class="service-detail-grid">
+                <div class="detail-text">
+                    <h2 class="detail-title"><span class="inline-block-text">WEB・映像・</span><span class="inline-block-text">コンテンツ制作</span></h2>
+                    <p class="detail-desc">
+                        企業の魅力を引き出し、課題を解決するためのクリエイティブを提供します。コーポレートサイトの制作から、採用プロモーション動画、さらには社内資料のフォーマット化まで幅広く対応します。
+                    </p>
+                    <ul class="detail-list">
+                        <li>レスポンシブコーポレートサイト・採用・LP等のWEB制作（30万円〜）と保守管理</li>
+                        <li>ロゴ、名刺、封筒、パンフレット等の印刷用グラフィックデザイン</li>
+                        <li>採用プロモーション・展示会用映像等の動画制作</li>
+                        <li>社内資料やプレゼン資料のフォーマット化・作成代行</li>
+                    </ul>
+                </div>
+                <div class="detail-image">
+                    <img src="creative_production_bg.png" alt="洗練されたクリエイティブなオフィス環境でプロモーション動画の映像編集を行う様子">
+                </div>
+            </div>
+
+            <!-- Creative Production Pricing Cards -->
+            <div class="services-grid grid-2" style="margin-top: 5rem;">
+                <!-- Card 1 -->
+                <div class="service-card fade-up delay-1">
+                    <div class="service-icon" style="color: #6c5ce7;"><i class="fa-solid fa-display"></i></div>
+                    <h3 class="service-title">WEBサイト制作</h3>
+                    <p class="service-desc" style="margin-bottom: 2rem;">
+                        事業内容と情報量からサイトディレクションを行います。<br>デザインの制作からWEB上へのアップロードまで弊社にお任せください。
+                    </p>
+                    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--bg-light-gray);">
+                        <span style="display: block; font-size: 1.8rem; color: var(--accent-orange); font-weight: 700;">¥300,000〜</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card fade-up delay-2">
+                    <div class="service-icon" style="color: #6c5ce7;"><i class="fa-solid fa-film"></i></div>
+                    <h3 class="service-title">映像・動画制作</h3>
+                    <p class="service-desc" style="margin-bottom: 2rem;">
+                        採用動画から企業PR、社内マニュアルまで。企画から撮影・編集までワンストップで、企業の魅力を引き出す高品質な映像をご提供します。
+                    </p>
+                    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--bg-light-gray);">
+                        <span style="display: block; font-size: 1.8rem; color: var(--accent-orange); font-weight: 700;">¥150,000〜</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container center">
+            <h2 class="footer-logo">MIUCUIT Co., Ltd.</h2>
+            <p class="footer-address">〒654-0028 兵庫県神戸市須磨区常盤町2丁目4-15</p>
+            
+            <div class="footer-socials" style="margin: 2rem 0;">
+                <a href="https://www.instagram.com/miucuitjp/?hl=ja" target="_blank" rel="noopener noreferrer" style="color: var(--primary-text); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/miucuitjp" target="_blank" rel="noopener noreferrer" style="color: var(--primary-text); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" style="fill: currentColor; vertical-align: -0.125em;"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+                </a>
+                <a href="https://ja-jp.facebook.com/miucuitjp/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-text); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s;"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+
+            <p class="copyright">&copy; 2026 Miucuit Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+</html>
